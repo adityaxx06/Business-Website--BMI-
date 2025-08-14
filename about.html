@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Balaji Metal Industries</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Balaji Metal Industries is a leading manufacturer and supplier of industrial components including Spring Steel Wiremesh, Stainless Steel Mesh, Conveyor Idlers, Kiln Refractory Anchors, and Precision Castings for sponge iron, cement, and power plants across India." />
+    <meta name="keywords" content="Spring Steel Wire Mesh, SS 304 Mesh, Conveyor Idlers, Refractory Anchors, Precision Casting, Industrial Components, Balaji Metal Industries, India" />
+    <meta property="og:title" content="About Balaji Metal Industries" />
+    <meta property="og:description" content="Decades of reliability in industrial components for sponge iron, cement and power sectors." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/header.jpg" />
+    <meta property="og:url" content="https://balajimetalindustries.in/about.html" />
+
+    <!-- Libs -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+
+    <!-- About-only helper styles (move to style.css if you prefer) -->
+    <style>
+      .hero__about {
+        position: relative;
+        min-height: 55vh;
+        display: grid;
+        place-items: center;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #0a0a0a;
+        margin: 1.5rem auto;
+      }
+      .hero__about img {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover; opacity: 0.25;
+        transform: scale(1.05);
+        filter: contrast(1.05) saturate(1.05);
+      }
+      .hero__about__content {
+        position: relative; z-index: 2;
+        text-align: center; color: #fff;
+        padding: 3rem 1.25rem;
+      }
+      .breadcrumbs {
+        display: inline-flex; gap: .5rem; align-items: center;
+        background: rgba(255,255,255,.1);
+        padding: .5rem .75rem; border-radius: 999px;
+        backdrop-filter: blur(6px);
+        font-size: .9rem;
+      }
+      .stats__grid {
+        display: grid; gap: 1rem;
+        grid-template-columns: repeat(4, minmax(0,1fr));
+      }
+      .stat__card {
+        background: #fff; border-radius: 12px; padding: 1.25rem;
+        box-shadow: 0 10px 24px rgba(0,0,0,.07);
+        text-align: center;
+      }
+      .stat__card h3 { font-size: 1.8rem; margin: .25rem 0; color:#0b5bd3; }
+      .capabilities__grid, .industries__grid, .quality__grid, .team__grid, .timeline {
+        display: grid; gap: 1rem;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+      }
+      .capabilities__grid .about__card,
+      .industries__grid .about__card,
+      .quality__grid .about__card,
+      .team__grid .about__card {
+        background: #fff; border-radius: 14px; padding: 1.25rem;
+        box-shadow: 0 10px 24px rgba(0,0,0,.06);
+      }
+      .about__card h4 { margin: .3rem 0 .5rem; }
+      .about__badge {
+        display: inline-flex; align-items:center; gap:.4rem;
+        background: #eef5ff; color:#0b5bd3; padding: .35rem .6rem; border-radius: 999px;
+        font-size: .85rem; font-weight: 600;
+      }
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+      .timeline__item {
+        background: #fff; border-left: 4px solid #0b5bd3;
+        padding: 1rem 1.25rem; border-radius: 10px;
+        box-shadow: 0 10px 24px rgba(0,0,0,.05);
+      }
+      .cta__bar {
+        display: grid; gap: 1rem; align-items: center;
+        grid-template-columns: 1.2fr auto auto;
+        background: linear-gradient(135deg, #0b5bd3, #113a8a);
+        color: #fff; border-radius: 16px; padding: 1.25rem 1.5rem;
+      }
+      .cta__bar .btn, .cta__bar .btn--light {
+        border: none; cursor: pointer;
+        padding: .85rem 1.25rem; border-radius: 10px; font-weight: 600;
+      }
+      .cta__bar .btn--light { background:#fff; color:#0b5bd3; }
+      .cta__bar .btn { background: rgba(255,255,255,.18); color:#fff; }
+      .faq { border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 10px 24px rgba(0,0,0,.06); }
+      .faq__item { border-bottom: 1px solid #eee; }
+      .faq__q {
+        width: 100%; text-align: left; padding: 1rem 1.25rem;
+        background: #fff; border: none; cursor: pointer; font-weight: 600;
+        display:flex; justify-content:space-between; align-items:center;
+      }
+      .faq__a { padding: 0 1.25rem 1rem; display: none; color:#444; }
+      .map__wrap {
+        background:#fff; border-radius: 14px; overflow:hidden;
+        box-shadow: 0 10px 24px rgba(0,0,0,.06);
+      }
+      @media (max-width: 992px){
+        .stats__grid{ grid-template-columns: repeat(2,minmax(0,1fr)); }
+        .capabilities__grid, .industries__grid, .quality__grid, .team__grid{ grid-template-columns: repeat(2,minmax(0,1fr)); }
+        .cta__bar{ grid-template-columns: 1fr; text-align:center; }
+      }
+      @media (max-width: 640px){
+        .capabilities__grid, .industries__grid, .quality__grid, .team__grid{ grid-template-columns: 1fr; }
+      }
+    </style>
+
+    <!-- JSON-LD (Organization) -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Organization",
+      "name":"Balaji Metal Industries",
+      "url":"https://balajimetalindustries.in",
+      "logo":"https://balajimetalindustries.in/assets/bmi-logo.png",
+      "description":"Manufacturer and supplier of industrial components: Spring Steel Wire Mesh, SS Mesh, Conveyor Idlers & Frames, Kiln Refractory Anchors, Precision Castings.",
+      "sameAs":[
+        "https://www.facebook.com/",
+        "https://www.linkedin.com/",
+        "https://twitter.com/"
+      ],
+      "address":{
+        "@type":"PostalAddress",
+        "addressCountry":"IN"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <!-- Nav -->
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <img src="assets/bmi-logo.png" class="logo" alt="Balaji Metal Industries logo">
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html#product">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <header class="section__container hero__about">
+      <img src="assets/header.jpg" alt="Industrial background">
+      <div class="hero__about__content">
+        <div class="breadcrumbs">
+          <a href="index.html" style="color:#fff; text-decoration:none;">Home</a>
+          <span>/</span><span>About</span>
+        </div>
+        <h1 style="margin-top:1rem;">About Balaji Metal Industries</h1>
+        <p class="section__description" style="max-width:900px;margin: .75rem auto 0;">
+          Decades of reliability supplying critical components to sponge iron, cement and power plants across India —
+          from spring steel screens to SS wire mesh, conveyor idlers, kiln refractory anchors and precision castings.
+        </p>
+      </div>
+    </header>
+
+    <!-- Company Overview -->
+    <section class="section__container about__container">
+      <div class="about__header">
+        <div>
+          <h2 class="section__header">Who We Are</h2>
+          <p class="section__description">
+            Balaji Metal Industries (BMI) is a trusted manufacturer and supplier of high-performance industrial components.
+            We combine quality raw materials (Usha Martin/Tata Grade-1 wires), modern fabrication and strict QA to deliver
+            reliable parts that keep your plants running with minimal downtime.
+          </p>
+        </div>
+        <a href="index.html#contact" class="about__btn">Get a Quote</a>
+      </div>
+
+      <!-- CTA Bar -->
+    <section class="section__container">
+      <div class="cta__bar">
+        <div>
+          <h3 style="margin:0 0 .25rem;">Need a quick quote?</h3>
+          <p style="opacity:.9; margin:0;">Share your drawing/specs — we’ll respond within 24 hours.</p>
+        </div>
+        <a class="btn--light" href="index.html#contact">Get a Quote</a>
+        <a class="btn" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">
+          <i class="ri-whatsapp-line"></i>&nbsp; WhatsApp
+        </a>
+      </div>
+    </section>
+
+      <!-- Quick stats -->
+      <div class="stats__grid" style="margin-top:1.25rem;">
+        <div class="stat__card">
+          <i class="ri-time-line" style="font-size:1.4rem;"></i>
+          <h3>10+ yrs</h3>
+          <p>Industry Experience</p>
+        </div>
+        <div class="stat__card">
+          <i class="ri-building-2-line" style="font-size:1.4rem;"></i>
+          <h3>500+ </h3>
+          <p>Installations</p>
+        </div>
+        <div class="stat__card">
+          <i class="ri-shield-check-line" style="font-size:1.4rem;"></i>
+          <h3>99.2%</h3>
+          <p>On-time Delivery</p>
+        </div>
+        <div class="stat__card">
+          <i class="ri-user-star-line" style="font-size:1.4rem;"></i>
+          <h3>250+</h3>
+          <p>Happy Clients</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="section__container">
+      <h2 class="section__header">Core Capabilities</h2>
+      <p class="section__description" style="max-width:900px;">
+        From raw material selection to final inspection, our process is built for rugged performance in harsh conditions.
+      </p>
+      <div class="capabilities__grid" style="margin-top:1rem;">
+        <div class="about__card">
+          <span class="about__badge"><i class="ri-check-line"></i> SS Wire Mesh</span>
+          <h4>SS 304 / 310 Wire Mesh</h4>
+          <p>Precision woven mesh with consistent aperture for screening, filtration and kiln zones.</p>
+        </div>
+        <div class="about__card">
+          <span class="about__badge"><i class="ri-check-line"></i> Spring Steel</span>
+          <h4>Grade-1 Spring Steel Screens</h4>
+          <p>High resilience and wear resistance, sourced from Usha Martin/Tata for long life.</p>
+        </div>
+        <div class="about__card">
+          <span class="about__badge"><i class="ri-check-line"></i> Conveying</span>
+          <h4>Conveyor Idlers & Frames</h4>
+          <p>Low-runout rollers, precision bearings, sealed for dusty environments in cement & mining.</p>
+        </div>
+        <div class="about__card">
+          <span class="about__badge"><i class="ri-check-line"></i> Anchors</span>
+          <h4>Refractory Anchors</h4>
+          <p>All types: V/Y/C/2-leg/3-leg, in SS grades for kiln, furnace & heater linings.</p>
+        </div>
+        <div class="about__card">
+          <span class="about__badge"><i class="ri-check-line"></i> Casting</span>
+          <h4>Precision Castings</h4>
+          <p>Custom cast components to drawings with machining & finishing support.</p>
+        </div>
+        <div class="about__card">
+          <span class="about__badge"><i class="ri-check-line"></i> QA</span>
+          <h4>Quality Assurance</h4>
+          <p>Dimensional checks, hardness, weld integrity, surface finish and traceability.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries Served -->
+    <section class="section__container">
+      <h2 class="section__header">Industries We Serve</h2>
+      <div class="industries__grid" style="margin-top:1rem;">
+        <div class="about__card"><h4><i class="ri-fire-line"></i> Sponge Iron</h4><p>High-temp components that survive kiln abuse.</p></div>
+        <div class="about__card"><h4><i class="ri-building-3-line"></i> Cement</h4><p>Screens, idlers & anchors for raw, kiln, and packing.</p></div>
+        <div class="about__card"><h4><i class="ri-flashlight-line"></i> Power Plants</h4><p>Reliable spares for coal handling & ash systems.</p></div>
+        <div class="about__card"><h4><i class="ri-archive-line"></i> Mining</h4><p>Wear-resistant screening solutions.</p></div>
+        <div class="about__card"><h4><i class="ri-flask-line"></i> Process</h4><p>Filtration & conveying for chemical/process units.</p></div>
+        <div class="about__card"><h4><i class="ri-ship-line"></i> Ports & Bulk</h4><p>Robust handling components for bulk material.</p></div>
+      </div>
+    </section>
+
+    <!-- Quality & Certifications -->
+    <section class="section__container">
+      <h2 class="section__header">Quality & Certifications</h2>
+      <div class="quality__grid" style="margin-top:1rem;">
+        <div class="about__card">
+          <h4><i class="ri-medal-2-line"></i> Material Traceability</h4>
+          <p>Heat number traceability for wires, plates and castings.</p>
+        </div>
+        <div class="about__card">
+          <h4><i class="ri-shield-star-line"></i> Standards</h4>
+          <p>Manufacturing aligned to IS/ASTM where applicable (project-wise).</p>
+        </div>
+        <div class="about__card">
+          <h4><i class="ri-test-tube-line"></i> Inspection</h4>
+          <p>Dimensional, hardness & weld inspections with inspection records provided.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="section__container">
+      <h2 class="section__header">Our Process</h2>
+      <div class="timeline" style="margin-top:1rem;">
+        <div class="timeline__item"><strong>1. Requirement & Drawings</strong><br/>We review specs, media, throughput and environment.</div>
+        <div class="timeline__item"><strong>2. Material Planning</strong><br/>Grade selection, sourcing & traceability plan.</div>
+        <div class="timeline__item"><strong>3. Fabrication & Assembly</strong><br/>Woven/welded mesh, rolling, machining, welding.</div>
+        <div class="timeline__item"><strong>4. QA & Testing</strong><br/>Checks as per control plan; corrective loop if required.</div>
+        <div class="timeline__item"><strong>5. Dispatch & Support</strong><br/>On-time delivery with installation guidance.</div>
+      </div>
+    </section>
+
+    <!-- Team / Leadership (optional placeholders) -->
+    <section class="section__container">
+      <h2 class="section__header">Leadership</h2>
+      <div class="team__grid" style="margin-top:1rem;">
+        <div class="about__card">
+          <h4>Founder & Director</h4>
+          <p>Driving customer-first manufacturing and dependable supply chains.</p>
+        </div>
+        <div class="about__card">
+          <h4>Head – Operations</h4>
+          <p>Leads shop-floor execution, quality and dispatch schedules.</p>
+        </div>
+        <div class="about__card">
+          <h4>Head – Sales</h4>
+          <p>Understands your process challenges and suggests the right solution mix.</p>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- Swiper -->
+  <section class="client-slider section__container">
+    <h2 class="section__header">Our Clients</h2>
+    <div class="swiper clients-swiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="client-card">
+            <img src="assets/customer/c-1.jpg" alt="4Mann Group">
+            <p>4Mann Group</p>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="client-card">
+            <img src="assets/customer/c-2.jpg" alt="Sajjan Group">
+            <p>Sajjan Group</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="client-card">
+            <img src="assets/customer/c-3.jpg" alt="Rocktech">
+            <p>Rocktech Eng.</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="client-card">
+            <img src="assets/customer/c-4.jpg" alt="Jayaswal Neco">
+            <p>Jayaswal Neco.</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="client-card">
+            <img src="assets/customer/c-5.jpg" alt="German Txt">
+            <p>German TMX</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="client-card">
+            <img src="assets/customer/c-6.jpg" alt="Hero Cycle">
+            <p>Hero Cycle</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="client-card">
+            <img src="assets/customer/c-7.jpg" alt="Mangal Sponge">
+            <p>Mangal Sponge</p>
+          </div>
+        </div>
+        <!-- Add more slides as needed -->
+      </div>
+      <!-- Scoped controls INSIDE this swiper to avoid clashes -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+    <!-- FAQ -->
+    <section class="section__container">
+      <h2 class="section__header">FAQs</h2>
+      <div class="faq">
+        <div class="faq__item">
+          <button class="faq__q">Do you customize mesh openings and wire diameter? <i class="ri-add-line"></i></button>
+          <div class="faq__a">Yes. We manufacture per drawing/specs – aperture size, wire dia, roll size and grade.</div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q">What are typical lead times? <i class="ri-add-line"></i></button>
+          <div class="faq__a">Standard items: 5–10 working days. Project/custom items will be quoted with schedule.</div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q">Can you ship pan-India? <i class="ri-add-line"></i></button>
+          <div class="faq__a">Yes, we dispatch across India with safe packing and tracked logistics.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map / Location (replace src with your map if you want) -->
+    <section class="section__container">
+      <h2 class="section__header">Our Location</h2>
+      <div class="map__wrap">
+        <iframe
+          title="Balaji Metal Industries Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..."
+          width="100%" height="380" style="border:0;" allowfullscreen=""
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <section class="contact-details">
+  <div class="section__container">
+    <h2 class="section__header">Contact Details</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="ri-user-3-fill"></i>
+        <h4>Owner Name</h4>
+        <p>Mrs. Rekha Soni</p>
+      </div>
+      <div class="contact-card">
+        <i class="ri-mail-fill"></i>
+        <h4>Email</h4>
+        <p><a href="mailto:balajimetalindustries@gmail.com">balajimetal09@gmail.com</a></p>
+      </div>
+      <div class="contact-card">
+        <i class="ri-phone-fill"></i>
+        <h4>Office Contact</h4>
+        <p><a href="tel:+919598106365">+91 9598106365</a></p>
+        <p><a href="tel:+919827930382">+91 9827930382</a></p>
+      </div>
+      <div class="contact-card">
+        <i class="ri-map-pin-line"></i>
+        <h4>Address</h4>
+        <p><a href="https://www.google.com/maps/place/Balaji+Metal+Industries/@22.0730031,82.1247872,18.67z/data=!4m6!3m5!1s0x3a280d0051231b1b:0x9caa90916dcd823b!8m2!3d22.0729977!4d82.12463!16s%2Fg%2F11v_8hkhw0?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D">26-A Industrial Area, Tifra, Bilaspur Chhattisgarh <br> Pincode : 495223</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="footer__logo"><a href="index.html" class="logo">BMI.</a></div>
+          <p>Reliable industrial components, built to perform under pressure.</p>
+          <ul class="footer__socials">
+            <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
+            <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
+            <li><a href="#"><i class="ri-linkedin-fill"></i></a></li>
+            <li><a href="#"><i class="ri-pinterest-fill"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html#contact">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="#" target="_blank">Indiamart</a></li>
+          </ul>
+        </div>
+        <div class="footer__bar">Copyright © 2025 Balaji Metal Industries. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      // Simple FAQ toggle (no dependency)
+      document.querySelectorAll('.faq__q').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const ans = btn.parentElement.querySelector('.faq__a');
+          const open = ans.style.display === 'block';
+          document.querySelectorAll('.faq__a').forEach(a=>a.style.display='none');
+          document.querySelectorAll('.faq__q i').forEach(i=>i.className='ri-add-line');
+          if(!open){
+            ans.style.display='block';
+            btn.querySelector('i').className='ri-subtract-line';
+          }
+        });
+      });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const swiper = new Swiper('.clients-swiper', {
+        slidesPerView: 2,
+        spaceBetween: 16,
+        loop: true,
+        autoplay: { delay: 2000, disableOnInteraction: false },
+        pagination: {
+          el: '.clients-swiper .swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.clients-swiper .swiper-button-next',
+          prevEl: '.clients-swiper .swiper-button-prev',
+        },
+        breakpoints: {
+          640: { slidesPerView: 3, spaceBetween: 20 },
+          1024: { slidesPerView: 5, spaceBetween: 24 },
+        },
+      });
+    });
+  </script>
+  </body>
+</html>
