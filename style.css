@@ -252,6 +252,8 @@ nav .logo {
 .about__card p {
   color: var(--text-light);
 }
+
+
 .product__grid {
   margin-top: 4rem;
   display: grid;

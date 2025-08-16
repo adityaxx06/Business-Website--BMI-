@@ -43,7 +43,7 @@ ScrollReveal().reveal(".header__content p", {
   delay: 1500,
 });
 
-ScrollReveal().reveal(".offer__card", {
+ScrollReveal().reveal(".deals__card", {
   ...scrollRevealOption,
   interval: 500,
 });
@@ -59,24 +59,33 @@ ScrollReveal().reveal(".about__card", {
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const swiper = new Swiper('.clients-swiper', {
-    slidesPerView: 2,
-    spaceBetween: 16,
-    loop: true,
-    autoplay: { delay: 2000, disableOnInteraction: false },
-    pagination: {
-      el: '.clients-swiper .swiper-pagination',
-      clickable: true,
+
+
+const swiper = new Swiper('.clients-swiper', {
+  slidesPerView: 2,
+  spaceBetween: 16,
+  loop: true,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.clients-swiper .swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.clients-swiper .swiper-button-next',
+    prevEl: '.clients-swiper .swiper-button-prev',
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 3,
+      spaceBetween: 20,
     },
-    navigation: {
-      nextEl: '.clients-swiper .swiper-button-next',
-      prevEl: '.clients-swiper .swiper-button-prev',
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 24,
     },
-    breakpoints: {
-      640:  { slidesPerView: 3, spaceBetween: 20 },
-      1024: { slidesPerView: 5, spaceBetween: 24 },
-    },
-  });
+  },
 });
 
