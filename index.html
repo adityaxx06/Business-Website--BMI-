@@ -20,7 +20,7 @@
   <!-- Open Graph (Facebook/LinkedIn Sharing) -->
   <meta property="og:title" content="Balaji Metal Industries - Industrial Products Manufacturer">
   <meta property="og:description" content="Leading manufacturer of SS Wire Mesh, Conveyor Rollers, SS Anchor Klin, Casting & Mechanical Items. Trusted by industries across India.">
-  <meta property="og:image" content="https://balajimetalindustries.com/images/banner.jpg">
+  <meta property="og:image" content="https://balajimetalindustries.vercel.app/assets/bmi-logo.png">
   <meta property="og:url" content="https://balajimetalindustries.com">
   <meta property="og:type" content="website">
 
@@ -28,16 +28,16 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Balaji Metal Industries">
   <meta name="twitter:description" content="High-quality SS Wire Mesh, Conveyor Rollers & Industrial Products.">
-  <meta name="twitter:image" content="https://balajimetalindustries.com/images/banner.jpg">
-
+  <meta name="twitter:image" content="https://balajimetalindustries.vercel.app/assets/bmi-logo.png">
+    <script src="https://unpkg.com/scrollreveal"></script>
   <!-- Structured Data (Schema for Organization) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Balaji Metal Industries",
-    "url": "https://balajimetalindustries.com",
-    "logo": "https://balajimetalindustries.com/images/logo.png",
+    "url": "https://balajimetalindustries.vercel.app",
+    "logo": "https://balajimetalindustries.vercel.app/assets/bmi-logo.png",
     "description": "Manufacturer of SS Wire Mesh, Conveyor Idlers & Rollers, SS Anchor Klin, Casting & Mechanical Items.",
     "address": {
       "@type": "PostalAddress",
@@ -81,10 +81,10 @@
 
 <!-- Hero section -->
   <header class="section__container header__container" id="home">
-    <div class="header__image">
-      <img src="assets/header.jpg" class="hero-img" alt="header" />
+    <div class="header__image ">
+      <img src="assets/header.jpg" class="hero-img fadeIn" alt="header" />
     </div>
-    <div class="header__content">
+    <div class="header__content fadeIn">
       <div>
         <h1>Welcome to Balaji Metal Industries</h1>
         <p>
@@ -99,8 +99,8 @@
 
 <!-- Quick intro -->
   <section class="section__container deals__container">
-    <div class="deals__card">
-      <h2 class="section__header">Leadership</h2>
+    <div class="deals__card fadeUp">
+      <h2 class="section__header card">Leadership</h2>
       <p></p>
     </div>
     <div class="deals__card">
@@ -127,7 +127,7 @@
 
 
 <!-- About section -->
-  <section class="section__container about__container" id="about">
+  <section class="section__container about__container fadeUp" id="about">
     <div class="about__header">
       <div>
         <h2 class="section__header">About us</h2>
@@ -143,7 +143,7 @@
       <a href="about.html" class="about__btn">Learn More</a>
     </div>
     <div class="about__content">
-      <div class="about__image">
+      <div class="about__image imageReveal">
         <img src="assets/about.png" alt="about" />
       </div>
       <div class="about__grid">
@@ -379,6 +379,10 @@
         },
       });
     });
+
+    ScrollReveal().reveal('.card', { interval: 200, origin: 'bottom', distance: '50px', duration: 800 });
+ScrollReveal().reveal('.hero-content', { delay: 300, origin: 'top', distance: '40px', duration: 1000 });
+
   </script>
 
 </body>

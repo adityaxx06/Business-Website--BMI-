@@ -20,46 +20,14 @@ navSearch.addEventListener("click", (e) => {
   navSearch.classList.toggle("open");
 });
 
-const scrollRevealOption = {
-  distance: "50px",
-  origin: "bottom",
-  duration: 1000,
-};
-
-ScrollReveal().reveal(".header__image img", {
-  ...scrollRevealOption,
-  origin: "right",
-});
-ScrollReveal().reveal(".header__content div", {
-  duration: 1000,
-  delay: 500,
-});
-ScrollReveal().reveal(".header__content h1", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
-ScrollReveal().reveal(".header__content p", {
-  ...scrollRevealOption,
-  delay: 1500,
-});
-
-ScrollReveal().reveal(".deals__card", {
-  ...scrollRevealOption,
-  interval: 500,
-});
-
-ScrollReveal().reveal(".about__image img", {
-  ...scrollRevealOption,
-  origin: "right",
-});
-ScrollReveal().reveal(".about__card", {
-  duration: 1000,
-  interval: 500,
-  delay: 500,
-});
 
 
+// ---------SCROLL ANIMATION--------
 
+ScrollReveal().reveal('.card', { interval: 200, origin: 'bottom', distance: '50px', duration: 800 });
+ScrollReveal().reveal('.hero-content', { delay: 300, origin: 'top', distance: '40px', duration: 1000 });
+
+// ----------------------
 
 const swiper = new Swiper('.clients-swiper', {
   slidesPerView: 2,

@@ -622,3 +622,67 @@ nav .logo {
   }
 }
 
+
+/* --- ANIMATIONS ---- */
+
+.fadeIn{
+    animation: fadeIn 1.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+
+.fadeUp{
+    animation: fadeUp both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+}
+
+@keyframes fadeUp {
+    from{
+        opacity: 0;
+        transform: translateY(10px) scale(0.5);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.autoShow{
+    animation: text-appear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 100vh;
+}
+
+@keyframes text-appear {
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.imageReveal{
+    animation: imageRaveal both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50% ;
+}
+@keyframes imageReveal {
+    from{
+        filter: saturate(0) contrast(4) brightness(.1) blur(20px);
+        opacity: 0;
+        scale: .95;
+        translate: 0 4rem;
+    }
+    to{
+        filter: none;
+        opacity: 1;
+        scale: 1;
+        translate: 0 0;
+    }
+}
